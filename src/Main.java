@@ -38,6 +38,22 @@ class LinkList {
         }
     }
 
+    public void addValueAtStart(int value) {
+        Node newNode = new Node(value);
+        Node temp = head;
+        head = newNode;
+        head.next = temp;
+    }
+
+    public void addValueAtEnd(int value) {
+        Node newNode = new Node(value);
+        Node current = head;
+        while (current.next!=null) {
+            current = current.next;
+        }
+        current.next = newNode;
+    }
+
     public boolean getTargetValue(int key) {
         if (head.data == key) {
             return true;
@@ -71,5 +87,10 @@ public class Main {
         } else {
             System.out.print("Value is not present.");
         }
+        linkList.addValueAtStart(100);
+        linkList.display();
+        System.out.println();
+        linkList.addValueAtEnd(200);
+        linkList.display();
     }
 }
