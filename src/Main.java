@@ -47,11 +47,32 @@ class LinkList {
 
     public void addValueAtEnd(int value) {
         Node newNode = new Node(value);
+
+        if (head == null) {
+            head = newNode;
+        }
+
         Node current = head;
-        while (current.next!=null) {
+        while (current.next != null) {
             current = current.next;
         }
         current.next = newNode;
+    }
+
+    public void deleteNode(int key) {
+        if (key == head.data) {
+            head = head.next;
+        } else {
+            Node temp = head;
+
+            while (temp.next != null) {
+                if (temp.next.data == key) {
+                    temp.next = temp.next.next;
+                    break;
+                }
+                temp = temp.next;
+            }
+        }
     }
 
     public boolean getTargetValue(int key) {
@@ -91,6 +112,9 @@ public class Main {
         linkList.display();
         System.out.println();
         linkList.addValueAtEnd(200);
+        linkList.display();
+        System.out.println();
+        linkList.deleteNode(200);
         linkList.display();
     }
 }
