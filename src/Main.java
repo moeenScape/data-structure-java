@@ -75,6 +75,31 @@ class LinkList {
         }
     }
 
+    public void addValueAtNthPosition(int key, int position) {
+        Node newNode = new Node(key);
+
+        if (position == 1) {
+            newNode.next = head;
+            head = newNode;
+        } else {
+            Node current = head;
+            for (int i = 1; i < position - 1 && current != null; i++) {
+                current = current.next;
+            }
+            if (current == null) {
+                System.out.println("Position is out of bounds.");
+                return;
+            }
+            newNode.next = current.next;
+            current.next = newNode;
+        }
+    }
+
+    public void deleteNthNode(int key, int position) {
+
+    }
+
+
     public boolean getTargetValue(int key) {
         if (head.data == key) {
             return true;
@@ -115,6 +140,9 @@ public class Main {
         linkList.display();
         System.out.println();
         linkList.deleteNode(200);
+        linkList.display();
+        linkList.addValueAtNthPosition(300,3);
+        System.out.println();
         linkList.display();
     }
 }
