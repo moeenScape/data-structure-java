@@ -7,7 +7,10 @@ public class DoubleLinkListDrive {
         doubleLinkList.append(30);
 
         doubleLinkList.displayForward();
-        System.out.println();
         doubleLinkList.displayBackward();
+        doubleLinkList.addAtFirst(5);
+        doubleLinkList.displayForward();
+        doubleLinkList.addAtEnd(40);
+        doubleLinkList.displayForward();
     }
 }
