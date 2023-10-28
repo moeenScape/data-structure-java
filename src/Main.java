@@ -1,13 +1,11 @@
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         LinkList linkList = new LinkList();
 
-        linkList.append(1);
-        linkList.append(2);
-        linkList.append(3);
-        linkList.append(4);
+        LinkList.append(1);
+        LinkList.append(2);
+        LinkList.append(3);
+        LinkList.append(4);
         System.out.print("Initial Value :");
         linkList.display();
         System.out.println();
