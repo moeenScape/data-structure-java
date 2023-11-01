@@ -12,5 +12,13 @@ public class DoubleLinkListDrive {
         doubleLinkList.displayForward();
         doubleLinkList.addAtEnd(40);
         doubleLinkList.displayForward();
+
+        if(doubleLinkList.searchValue(60)) {
+            System.out.println("Value Found");;
+        } else {
+            System.out.println("Value Not Found");
+        }
+        doubleLinkList.addValueAtKthPosition(2,100);
+        doubleLinkList.displayForward();
     }
 }

@@ -42,9 +42,55 @@ public class DoubleLinkList {
             tail = nodeDouble;
         } else {
             nodeDouble.prev = tail;
-            tail.next =nodeDouble;
+            tail.next = nodeDouble;
             tail = nodeDouble;
         }
+    }
+    public void addValueAtKthPosition(int position, int key) {
+        NodeDouble newNode = new NodeDouble(key);
+        if (position == 1) {
+            newNode.next = head;
+            if (head != null) {
+                head.prev = newNode;
+            }
+            head = newNode;
+        } else {
+            NodeDouble current = head;
+            int count = 1;
+            while (count < position - 1 && current != null) {
+                current = current.next;
+                count++;
+            }
+            if (current == null) {
+                // Position is out of bounds, you can handle this case as needed.
+                return;
+            }
+            newNode.next = current.next;
+            newNode.prev = current;
+            if (current.next != null) {
+                current.next.prev = newNode;
+            }
+            current.next = newNode;
+        }
+    }
+
+    public boolean searchValue(int key) {
+        NodeDouble nodeDouble = head;
+        NodeDouble nodeDouble1 = tail;
+
+        while (nodeDouble.next == nodeDouble1.prev) {
+            if (nodeDouble.data == key || nodeDouble1.data == key) {
+                return true;
+            }
+            nodeDouble = nodeDouble.next;
+            nodeDouble1 = nodeDouble.prev;
+
+        }
+        return false;
+    }
+
+    public void deleteNode(int key) {
+
     }
 
     public void displayForward() {

@@ -26,6 +26,7 @@ public class LinkList {
             System.out.print(current.data + " --> ");
             current = current.next;
         }
+        System.out.println();
     }
 
     public void addValueAtStart(int value) {
