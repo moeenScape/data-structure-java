@@ -46,6 +46,7 @@ public class DoubleLinkList {
             tail = nodeDouble;
         }
     }
+
     public void addValueAtKthPosition(int position, int key) {
         NodeDouble newNode = new NodeDouble(key);
         if (position == 1) {
@@ -90,7 +91,18 @@ public class DoubleLinkList {
     }
 
     public void deleteNode(int key) {
-
+        NodeDouble node = head;
+        if (head.data == key && head.next != null) {
+            head = head.next;
+        } else {
+            while (node != null) {
+                if (key == node.data) {
+                    node.prev.next = node.next;
+                    node.next.prev = node.prev;
+                }
+                node = node.next;
+            }
+        }
     }
 
     public void displayForward() {

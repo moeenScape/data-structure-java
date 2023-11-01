@@ -20,5 +20,8 @@ public class DoubleLinkListDrive {
         }
         doubleLinkList.addValueAtKthPosition(2,100);
         doubleLinkList.displayForward();
+        doubleLinkList.deleteNode(100);
+        doubleLinkList.displayForward();
+
     }
 }
