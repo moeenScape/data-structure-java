@@ -1,5 +1,5 @@
 public class BinarySearchTree {
-    class Node {
+    static class Node {
         int key;
         Node left, right;
 
@@ -88,9 +88,6 @@ public class BinarySearchTree {
                 succParent = succ;
                 succ = succ.left;
             }
-            // Delete successor.  Since successor is always left child of its parent
-            // we can safely make successor's right.right child as left of its parent.
-            // If there is no succ, then assign succ.right to succParent.right
 
             if (succParent != root) {
                 succParent.left = succ.right;
